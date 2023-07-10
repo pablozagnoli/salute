@@ -40,7 +40,10 @@
 </div>
 
 <div class="row">
-  <app-camera (pictureTaken)="handleImage($event)"></app-camera>
+  <div class="row-sm-2">
+    <button (click)="abrircamera()">Abrir Camera</button>
+  </div>
+  <app-camera #camera (pictureTaken)="handleImage($event)"></app-camera>
 
   <div class="snapshot" *ngIf="webcamImage">
     <img [src]="webcamImage.imageAsDataUrl" />
