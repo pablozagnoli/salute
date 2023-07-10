@@ -8,18 +8,24 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TablelocacoesComponent } from './components/tablelocacoes/tablelocacoes.component';
+import { CameraComponent } from './components/camera/camera.component';
+import { WebcamModule } from 'ngx-webcam';
+import { DetalhesLocacaoComponent } from './pages/DetalhesLocacao/DetalhesLocacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    TablelocacoesComponent
+    TablelocacoesComponent,
+    CameraComponent,
+    DetalhesLocacaoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatTableModule
+    MatTableModule,
+    WebcamModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebcamImage } from 'ngx-webcam';
 
 @Component({
   selector: 'app-DetalhesLocacao',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./DetalhesLocacao.component.css']
 })
 export class DetalhesLocacaoComponent implements OnInit {
+  public webcamImage!: WebcamImage;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleImage(webcamImage: WebcamImage) {
+    this.webcamImage = webcamImage;
   }
 
 }
