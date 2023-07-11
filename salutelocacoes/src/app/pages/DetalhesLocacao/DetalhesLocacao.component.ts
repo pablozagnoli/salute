@@ -21,4 +21,8 @@ export class DetalhesLocacaoComponent implements OnInit {
   abrircamera() {
     this.camera.toggleWebcam();
   }
+
+  Salvar() {
+    alert('Salvo');
+  }
 }

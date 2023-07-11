@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tablelocacoes',
@@ -15,12 +16,16 @@ export class TablelocacoesComponent implements OnInit {
 
   dataSource = ELEMENT_DATA;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 
   clickedRow(row: any) {
-    alert(row.nomecliente);
+    this.router.navigate(['detalheslocacao'], {
+      queryParams: {
+        numorca: row.nomecliente,
+      },
+    });
   }
 }
 
@@ -61,5 +66,53 @@ const ELEMENT_DATA: PeriodicElement[] = [
     dataentrega: '12/05/2023 - 18:55',
     dataretirada: '12/05/2023 - 18:55',
     entregue: 'NÃO',
+  },
+  {
+    nomecliente: 'Clinica tuttu',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'NÃO',
+  },
+  {
+    nomecliente: 'Consultorio adriana',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'SIM',
+  },
+  {
+    nomecliente: 'Clinica tuttu',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'NÃO',
+  },
+  {
+    nomecliente: 'Consultorio adriana',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'SIM',
+  },
+  {
+    nomecliente: 'Clinica tuttu',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'NÃO',
+  },
+  {
+    nomecliente: 'Consultorio adriana',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'SIM',
+  },
+  {
+    nomecliente: 'Clinica tuttu',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'NÃO',
+  },
+  {
+    nomecliente: 'Consultorio adriana',
+    dataentrega: '12/05/2023 - 18:55',
+    dataretirada: '12/05/2023 - 18:55',
+    entregue: 'SIM',
   },
 ];

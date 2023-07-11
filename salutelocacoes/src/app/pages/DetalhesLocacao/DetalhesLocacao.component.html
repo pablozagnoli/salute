@@ -1,15 +1,5 @@
 <div class="row">
   <div class="col-sm-6">
-    <label>Texto</label>
-    <input class="form-control" type="text" />
-  </div>
-  <div class="col-sm-6">
-    <label>Texto</label>
-    <input class="form-control" type="text" />
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
     <label>Nome Cliente</label>
     <input class="form-control" type="text" />
   </div>
@@ -38,15 +28,37 @@
     <input class="form-control" type="text" />
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-6">
+    <label>Observação 1</label>
+    <input class="form-control" type="text" />
+  </div>
+  <div class="col-sm-6">
+    <label>Observação 2</label>
+    <input class="form-control" type="text" />
+  </div>
+</div>
 
 <div class="row">
-  <div class="row-sm-2">
-    <button (click)="abrircamera()">Abrir Camera</button>
-  </div>
-  <app-camera #camera (pictureTaken)="handleImage($event)"></app-camera>
+  <div class="col-sm-4">
+    <label>Foto do equipamento: </label>
+    <button
+      style="margin-left: 20px"
+      class="btn btn-primary"
+      (click)="abrircamera()"
+    >
+      Abrir Camera
+    </button>
+    <app-camera #camera (pictureTaken)="handleImage($event)"></app-camera>
 
-  <div class="snapshot" *ngIf="webcamImage">
-    <img [src]="webcamImage.imageAsDataUrl" />
+    <div *ngIf="webcamImage">
+      <img [src]="webcamImage.imageAsDataUrl" />
+    </div>
   </div>
+</div>
 
+<div class="row align-self-end">
+  <div class="col-sm-12">
+    <button (click)="Salvar()" class="btn btn-success">Salvar</button>
+  </div>
 </div>

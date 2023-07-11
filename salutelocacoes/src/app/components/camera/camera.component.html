@@ -1,41 +1,31 @@
 <div class="row">
-  <div class="col-sm-6">
-    <div>
-      <div>
-        <webcam
-          [height]="500"
-          [width]="500"
-          [trigger]="triggerObservable"
-          (imageCapture)="handleImage($event)"
-          *ngIf="showWebcam"
-          [allowCameraSwitch]="allowCameraSwitch"
-          [switchCamera]="nextWebcamObservable"
-          [videoOptions]="videoOptions"
-          (cameraSwitched)="cameraWasSwitched($event)"
-          (initError)="handleInitError($event)"
-        ></webcam>
-        <br />
-        <button
-          class="actionBtn"
-          (click)="triggerSnapshot()"
-          title="Take Picture"
-        >
-          <label>Captura imagem</label>
-          📸
-        </button>
-        <div
-          class="actionBtn"
-          (click)="showNextWebcam(true)"
-          title="Switch Camera"
-        >
-          🔁
-        </div>
-      </div>
-    </div>
-
-    <h4 *ngIf="errors.length > 0">Messages:</h4>
-    <ul *ngFor="let error of errors">
-      <li>{{ error | json }}</li>
-    </ul>
+  <div class="col-sm-12">
+    <webcam
+      [height]="500"
+      [width]="500"
+      [trigger]="triggerObservable"
+      (imageCapture)="handleImage($event)"
+      *ngIf="showWebcam"
+      [allowCameraSwitch]="allowCameraSwitch"
+      [switchCamera]="nextWebcamObservable"
+      [videoOptions]="videoOptions"
+      (cameraSwitched)="cameraWasSwitched($event)"
+      (initError)="handleInitError($event)"
+    ></webcam>
   </div>
+  <div class="col-sm-12">
+    <button class="btn btn-success" (click)="triggerSnapshot()">
+      <label>Captura imagem</label>
+    </button>
+  </div>
+  <div class="col-sm-6">
+    <button class="btn btn-warning" (click)="showNextWebcam(true)">
+      Atualiza Imagem
+    </button>
+  </div>
+
+  <h4 *ngIf="errors.length > 0">Messages:</h4>
+  <ul *ngFor="let error of errors">
+    <li>{{ error | json }}</li>
+  </ul>
 </div>
